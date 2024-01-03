@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Créer un objet simple
+        /*
+        Javasccript peutmanipuler le DOM pour lire le contenu d'une page HTML mais aussi pour le modifier. Le language permet ansi d'ajouter, changer ou supprimer des éléments HTML. La manière la plus basique de le faire est d'utiliser document.write(), dont le paramètre est du code HTML.
+        Lorsque cette instruction est exécuté, JS ajoute du code à la page web. Toutefois, cette instruction est assez sommaire et écrase tout le contenu présent sur une page avant son exécution. Le DOM offre heureusement des outils plus élaborés pour créer ou supprimer des balises HTML. Ils sont toutefois plus complexes à utiliser que document.write().
+
+        Le DOM représente une page web sous la forme d'un arbre. Tout élément d'une page est un noeud (node ne anglais). Les noeuds sont liés les uns aux autres par une relation hiérarchique. A l'éxception de la racine, chaque noeud a un unique noeud parent. Les neouds <p> et <img> dépendent ainsi du noeud <body>. Ce sont des noeuds enfants. Les attributs et informations contenues dans chaque noeud sont manipulables par Javascript. Ainsi, la méthode getElmementById() accède au contenu du noeud dont l'id lui est passé en paramètre.
+
+        JavaScript procède en trois étapes pour ajouter un noeud dans le DOM. Le noeud est crée à l'aide de la méthode document.createElement(). Cette méthode prend pour paramètre le nom de la balise à ajouter, comme img ou a. Ensuite, il est possible de préciser les paramètres de l'élément à l'aide de la méthode setAttribute(). Elle prend deux paramètres :
+        - le nom de l'attribut et sa valeur. Ces commandes permettent de créer un noeud mais ne l'intègre pas à la page. L'ajout se fait à l'aide de la méthode appendChild(). Cette méthode permet d'ajouter le noeud crée en tant que noeud enfant d'un élément déjà existant dans la page.
+        */
+        document.write("<p>Un premier paragraphe</p>");
+        document.write("<p>Un second paragraphe</p>");
+    </script>
+
+    <script>
+        function image(){
+            var noeud = document.createElement("img");
+            noeud.setAttribute("src", "toto.jpg");
+            document.body.appendChild(noeud);
+        };
+    </script>
+
+    <button onclick="image()">Ajouter une image</button>
+
+    <!--
+        Un élément HTML utile lors de la manipulation du DOM est la balise <div>. Cette dernière n'est pas visible par les internautes. Son rôle est de délimiter des éléments d'une page web. Elle peut être utilisée avec la méthode append<chil() pour insérer un noeud à un eendroit précis.
+    -->
+
+    <script>
+        function image2(){
+            var noeud2 = document.createElement("img");
+            noeud2.setAttribute("src", "toto?jpg");
+
+            var divCible = document.getElementById("cible");
+            cible.appendChild(noeud2);
+        };
+    </script>
+
+    <p>Paragraphe A</p>
+    <div id="cible2"></div>
+    <p>Paragraphe b</p>
+    <button onclick="image2()">Ajouter une image</button>
+
+    <!--
+        Supprimer une balise d'une page
+        JavaScript permet enfin de retirer des noeuds du DOM, ce qui a pour effet d'effacer des éléments HTML d'une page. La méthode la plus simple pour y parvenir est removeChild(). Son paramètre estcle noeud qui doit être supprimé. Elle est utilisée depuis le noeud parent, ce qui nécessite de l'identifier auparavant avec la méthode getElementById().
+    -->
+    <script>
+        function suppr(){
+            var noeudParent = document.getElementById("parent");
+            var noeudEnfant = document.getElementById("enfant");
+            noeudParent.removeChild(noeudEnfant);
+        };
+    </script>
+
+    <div id="parent">
+        <img src="fleur.jpg" alt="Jolie Fleur" id="enfant" width="350" height="350">
+    </div>
+    <button onclick="suppr()">Supprimer</button>
+</body>
+</html>

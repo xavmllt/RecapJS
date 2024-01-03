@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revue JS</title>
+</head>
+<body>
+    <button onclick="calcul()"></button>
+    <script>
+
+        // Les variables
+        var ma_variable; // déclaration de varaiable
+        ma_variable = 5; // affectation de de valeur à la variable
+        // alert(ma_variable); // affichage dans une boîte de dialogue ou un popup
+        // confirm("Vouslez-vous confirmez ?"); // affichage d'une boîte de dialogue ou popup 
+        console.log(ma_variable); // affichage
+        // document.write(ma_variable); // affichage
+
+        // Manipuler les variables
+        let a = "Bonjour";
+        let b = " à tous";
+        // alert(a + b); // concaténation
+
+        console.log(Math.sqrt(10)); // racine carré d'un nombre
+        console.log(Math.pow(3, 2)); // puissance
+        console.log(Math.round(15.8)); // arrondir un nombre
+        console.log(Math.PI); // pi
+        console.log(Math.round(Math.PI));
+        console.log(Math.max(45, 68));
+
+        // Type de variables
+        let maV = "Bonne année";
+        console.log(typeof maV); // typeof affiche le type d'une variable
+
+        maV = Number(maV);
+        console.log(typeof maV);
+
+        // Donner les instructions en JS
+        // Les fonctions
+        function ma_fonction(a, b){
+            var calcul = a * b + 1;
+            alert(calcul);
+        };
+        
+        function ma_fonction2(a, b){
+            var a = prompt("Entrer un nombre");
+            var b = prompt("Entrer un nombre");
+            let calcul = a * b;
+            alert(calcul);
+        };
+        ma_fonction2();
+
+        // Exemple de callback de fonction anonyme
+        setTimeout(function(){
+            alert("Bonne année 2024 !");
+        }, 1000);
+        
+        // Interragir avec le HTML
+        function calcul(){
+            let d = parseInt(prompt("Entrez d "));
+            alert(d + 6);
+        };
+
+        setTimeout(calcul, 6000);
+
+        
+
+    </script>
+</body>
+</html>

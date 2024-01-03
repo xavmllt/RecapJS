@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="monchamp">
+        <button onclick="go()">Cliquez ici</button>
+    </form>
+    <br>
+    <button id="a" onclick="off()">A</button>
+    <button id="b">B</button>
+    <!-- Fonction releevr()-->
+    <button id="c" onclick="relever()">Oui</button>
+    <button id="d">Nom</button>
+    <button id="e" hidden="">Continuer</button>
+
+    <p hidden="" id="e"></p>
+
+    <script>
+        // Récupérer la valeur entrée dans un champ de saisie
+        function go(){
+            let saisie = document.getElementById("monchamp");
+            alert(saisie.value)
+        };
+    </script>
+
+    <script>
+        // Désactiver un élément HTML à l'aide de JS
+        function off(){
+            let cible = document.getElementById("b");
+            cible.setAttribute("disabled", b);
+        };
+    </script>
+
+    <script>
+        // Supprimer un attribut HTML en JS
+        function relever(){
+            var cibles = document.getElementById("e");
+            cibles.removeAttribute("hidden")
+        }
+    </script>
+</body>
+</html>
